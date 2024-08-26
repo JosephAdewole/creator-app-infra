@@ -15,30 +15,3 @@ resource "aws_security_group" "instance" {
     cidr_blocks	= ["0.0.0.0/0"]
   }
 }
-
-# Create an EC2 instance
-resource "aws_instance" "example" {
-  ami			                = "ami-785db401"
-  instance_type           = "t2.micro"
-  vpc_security_group_ids  = ["${aws_security_group.instance.id}"]
-  monitoring = true
-  
-  user_data = <<-EOF
-	      #!/bin/bash
-	      echo "Hello, World" > index.html
-	      nohup busybox httpd -f -p "${var.server_port}" &
-	      EOF
-			  
-  tags  = {
-    Name = "terraform-example"
-  }
-}
-
-resource "aws_s3_bucket" "profile-photos2" {
-  bucket = "profile-photos2"
-
-  tags = {
-    Name        = "loan_app"
-    Environment = "prod"
-  }
-}
