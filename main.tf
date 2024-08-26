@@ -6,7 +6,7 @@ provider "aws" {
 
 # Create a Security Group for an EC2 instance 
 resource "aws_security_group" "instance" {
-  name = "terraform-example-instance"
+  name = "terraform-example-instance2"
   
   ingress {
     from_port	  = "${var.server_port}"
