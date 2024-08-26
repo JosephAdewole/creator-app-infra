@@ -33,3 +33,12 @@ resource "aws_instance" "example" {
     Name = "terraform-example"
   }
 }
+
+resource "aws_s3_bucket" "profile_photos" {
+  bucket = "profile_photos"
+
+  tags = {
+    Name        = "loan_app"
+    Environment = "Dev"
+  }
+}
