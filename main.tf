@@ -34,14 +34,6 @@ resource "aws_instance" "example" {
   }
 }
 
-resource "aws_s3_bucket" "profile-photos" {
-  bucket = "profile-photos"
-
-  tags = {
-    Name        = "loan_app"
-    Environment = "Dev"
-  }
-}
 resource "aws_s3_bucket" "profile-photos2" {
   bucket = "profile-photos2"
 
