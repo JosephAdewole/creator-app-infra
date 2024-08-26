@@ -42,3 +42,11 @@ resource "aws_s3_bucket" "profile-photos" {
     Environment = "Dev"
   }
 }
+resource "aws_s3_bucket" "profile-photos2" {
+  bucket = "profile-photos2"
+
+  tags = {
+    Name        = "loan_app"
+    Environment = "Dev"
+  }
+}
