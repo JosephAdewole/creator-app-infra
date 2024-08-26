@@ -34,8 +34,8 @@ resource "aws_instance" "example" {
   }
 }
 
-resource "aws_s3_bucket" "profile_photos" {
-  bucket = "profile_photos"
+resource "aws_s3_bucket" "profile-photos" {
+  bucket = "profile-photos"
 
   tags = {
     Name        = "loan_app"
